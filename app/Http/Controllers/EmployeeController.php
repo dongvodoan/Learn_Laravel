@@ -67,6 +67,18 @@ class EmployeeController extends AppBaseController
     {
         $input = $request->all();
 
+        $name = htmlspecialchars($input['name']);
+        $department = htmlspecialchars($input['department']);
+        $job_title = htmlspecialchars($input['job_title']);
+        $phone = htmlspecialchars($input['phone']);
+        $email = htmlspecialchars($input['email']);
+
+        $input['name'] = $name;
+        $input['department'] = $department;
+        $input['job_title'] = $job_title;
+        $input['phone'] = $phone;
+        $input['email'] = $email;
+
         if ($request->hasFile('image')) {
             $img = $request->file('image');
             $imagename=time() . '_'.$input['name'] .'.'. $img->getClientOriginalExtension();
@@ -137,6 +149,18 @@ class EmployeeController extends AppBaseController
     public function update($id, UpdateEmployeeRequest $request)
     {
         $input = $request->all();
+
+        $name = htmlspecialchars($input['name']);
+        $department = htmlspecialchars($input['department']);
+        $job_title = htmlspecialchars($input['job_title']);
+        $phone = htmlspecialchars($input['phone']);
+        $email = htmlspecialchars($input['email']);
+
+        $input['name'] = $name;
+        $input['department'] = $department;
+        $input['job_title'] = $job_title;
+        $input['phone'] = $phone;
+        $input['email'] = $email;
 
         if ($request->hasFile('image')) {
             $img = $request->file('image');

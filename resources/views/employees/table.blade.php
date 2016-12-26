@@ -26,7 +26,7 @@
             <td>
                 {!! Form::open(['route' => ['employees.destroy', $employee->id], 'method' => 'delete']) !!}
                     <a href="{!! route('employees.edit', [$employee->id]) !!}" class='btn btn-success action'>Edit</a>
-                    {!! Form::button('Delete', ['type' => 'submit', 'class' => 'btn btn-danger action', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                    {!! Form::button('Delete', ['type' => 'submit', 'class' => 'btn btn-danger action', 'onclick' => "return confirm('Are you sure delete $employee->name?')"]) !!}
                 {!! Form::close() !!}
             </td>
             <?php } ?>

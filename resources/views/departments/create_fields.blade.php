@@ -26,7 +26,7 @@
     <select name="manager" class="form-control">
         <option value=""></option>
         @foreach($managers as $manager)
-        <option value="{!! $manager->id !!}">{!! $manager->name !!}</option>
+        <option value="{!! $manager->name !!}">{!! $manager->name !!}</option>
         @endforeach
     </select>
     @if ($errors->has('manager'))

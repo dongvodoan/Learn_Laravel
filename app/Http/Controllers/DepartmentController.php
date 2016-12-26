@@ -64,6 +64,14 @@ class DepartmentController extends AppBaseController
     {
         $input = $request->all();
 
+        $name = htmlspecialchars($input['name']);
+        $office_number = htmlspecialchars($input['office_number']);
+        $manager = htmlspecialchars($input['manager']);
+
+        $input['name'] = $name;
+        $input['office_number'] = $office_number;
+        $input['manager'] = $manager;
+
         $department = $this->departmentRepository->create($input);
 
         if (empty($department)) {
@@ -135,7 +143,17 @@ class DepartmentController extends AppBaseController
             return redirect(route('departments.index'));
         }
 
-        $department = $this->departmentRepository->update($request->all(), $id);
+        $input = $request->all();
+
+        $name = htmlspecialchars($input['name']);
+        $office_number = htmlspecialchars($input['office_number']);
+        $manager = htmlspecialchars($input['manager']);
+
+        $input['name'] = $name;
+        $input['office_number'] = $office_number;
+        $input['manager'] = $manager;
+
+        $department = $this->departmentRepository->update($input, $id);
 
         Flash::success('Department updated successfully.');
 

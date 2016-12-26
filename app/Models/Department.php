@@ -43,8 +43,8 @@ class Department extends Model
      * @var array
      */
     public static $rules = [
-        'name' => 'required',
-        'office_number' => 'required',
+        'name' => 'required|min:3|max:256',
+        'office_number' => 'required|regex:/^[0-9\+\-]*$/i|max: 15|min:9',
         'manager' => 'required'
     ];
 

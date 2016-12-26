@@ -35,8 +35,8 @@ class SearchController extends AppBaseController
     public function getsearch(Request $request)
     {
         $input = $request->all();
-        $name_employee = $input['name'];
-        $department_id = $input['department_id'];
+        $name_employee = htmlspecialchars($input['name']);
+        $department_id = htmlspecialchars($input['department_id']);
 
         // dd($department_id);
         if($name_employee==null) {

@@ -49,11 +49,11 @@ class Employee extends Model
      * @var array
      */
     public static $rules = [
-        'name' => 'required',
-        'job_title' => 'required',
-        'phone' => 'required',
-        'email' => 'required',
-        'image' => ''
+        'name' => 'required|regex:/^[A-Za-z \t]*\p{L}+/i|min:3|max:100',
+        'job_title' => 'required|min:3|max:100',
+        'phone' => 'required|regex:/^[0-9\+\-]*$/i|max: 15|min:9',
+        'email' => 'required|email',
+        'image' => 'mimes:jpeg,jpg,png'
     ];
 
     /**
