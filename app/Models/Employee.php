@@ -53,7 +53,7 @@ class Employee extends Model
         'job_title' => 'required',
         'phone' => 'required',
         'email' => 'required',
-        'image' => 'required'
+        'image' => ''
     ];
 
     /**

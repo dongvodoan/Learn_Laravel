@@ -2,7 +2,7 @@
 	<div class="form-group">
                  
             <div class="form-group">
-            	<img style="border:none; width: 500px; height: 280px;" src="{{ url('images/icon-profile.png') }}" class = "setpicture img-thumbnail img_upload" id ="image_no"></img><br>
+            	<img style="border:none; width: 500px; height: 280px;" src="{{ url('images/upload/icon-profile.png') }}" class = "setpicture img-thumbnail img_upload" id ="image_no"></img><br>
                 {{ Form::file('image',['class' => 'control','id' => 'image']) }}<br>
             </div>
                     @if ($errors->has('image'))
@@ -69,7 +69,7 @@
 	</div>
 </div>
 <!-- Submit Field -->
-<div class="form-group col-sm-12">
-    {!! Form::submit('Add', ['class' => 'btn btn-primary']) !!}
+<div class="form-group col-lg-7 col-lg-offset-5">
+    {!! Form::submit('Add', ['class' => 'btn btn-success']) !!}
     <a href="{!! route('employees.index') !!}" class="btn btn-default">Back</a>
 </div>

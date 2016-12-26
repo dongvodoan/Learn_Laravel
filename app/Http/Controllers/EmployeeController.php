@@ -37,9 +37,11 @@ class EmployeeController extends AppBaseController
     {
         $this->employeeRepository->pushCriteria(new RequestCriteria($request));
         $employees = $this->employeeRepository->all();
+
+        $this->departmentRepository->pushCriteria(new RequestCriteria($request));
+        $departments = $this->departmentRepository->all();
         
-        return view('employees.index')
-            ->with('employees', $employees);
+        return view('employees.index', compact('employees', 'departments'));
     }
 
     /**

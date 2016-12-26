@@ -28,7 +28,7 @@
 	    <select name="department" class="form-control">
 	    	<option value=""></option>
 	    	@foreach($departments as $department)
-	    	<option <?php if(($department->id)===($employee->id)) echo 'selected';?> value="{!! $department->id !!}">{!! $department->name !!}</option>
+	    	<option <?php if(($department->name)===($employee->department->name)) echo 'selected';?> value="{!! $department->id !!}">{!! $department->name !!}</option>
 	    	@endforeach
 	    </select>
 	    @if ($errors->has('department'))
@@ -69,7 +69,8 @@
 	</div>
 </div>
 <!-- Submit Field -->
-<div class="form-group col-sm-12">
-    {!! Form::submit('Add', ['class' => 'btn btn-primary']) !!}
+<div class="form-group col-lg-7 col-lg-offset-5">
+    {!! Form::submit('Update', ['class' => 'btn btn-success']) !!}
     <a href="{!! route('employees.index') !!}" class="btn btn-default">Back</a>
 </div>
+

@@ -1,42 +1,46 @@
-<!-- Id Field -->
-<div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{!! $employee->id !!}</p>
+<div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+    <div class="form-group">
+        <img style="border:none; width: 300px; height: 150px;" src="{{ url(config('path.upload_img').$employee->image) }}" class = "setpicture img-thumbnail img_upload" id ="image_no"></img>
+    </div>
 </div>
+<div class="col-lg-9 col-md-9 col-sm-8 col-xs-8">
+    <table class="table table-responsive table-striped">
+        <tbody>
 
-<!-- Department Id Field -->
-<div class="form-group">
-    {!! Form::label('department_id', 'Department Id:') !!}
-    <p>{!! $employee->department_id !!}</p>
+            <!-- Name Field -->
+            <tr>
+                <td>{!! Form::label('name', 'Name:') !!}</td>
+                <td><p>{!! $employee->name !!}</p></td>
+            </tr>
+
+            <!-- Department Field -->
+            <tr>
+                <td>{!! Form::label('department', 'Department:') !!}</td>
+                <td><p>{!! $employee->department->name !!}</p></td>
+            </tr>
+
+            <!-- Job Title Field -->
+            <tr>
+                <td>{!! Form::label('job_title', 'Job Title:') !!}</td>
+                <td><p>{!! $employee->job_title !!}</p></td>
+            </tr>
+
+            <!-- Phone Field -->
+            <tr>
+                <td>{!! Form::label('phone', 'Cellphone:') !!}</td>
+                <td><p>{!! $employee->email !!}</p></td>
+            </tr>
+
+            <!-- Email Field -->
+            <tr>
+                <td>{!! Form::label('email', 'Email:') !!}</td>
+                <td><p>{!! $employee->email !!}</p></td>
+            </tr>
+            <tr>
+                <td >
+                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-
-<!-- Name Field -->
-<div class="form-group">
-    {!! Form::label('name', 'Name:') !!}
-    <p>{!! $employee->name !!}</p>
-</div>
-
-<!-- Job Title Field -->
-<div class="form-group">
-    {!! Form::label('job_title', 'Job Title:') !!}
-    <p>{!! $employee->job_title !!}</p>
-</div>
-
-<!-- Email Field -->
-<div class="form-group">
-    {!! Form::label('email', 'Email:') !!}
-    <p>{!! $employee->email !!}</p>
-</div>
-
-<!-- Created At Field -->
-<div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $employee->created_at !!}</p>
-</div>
-
-<!-- Updated At Field -->
-<div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $employee->updated_at !!}</p>
-</div>
-

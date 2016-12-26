@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('home');
 });
 
+// Route::get('employees/search', 'SearchController@filter');
+Route::get('/search', ['as' => 'search','uses' => 'SearchController@getsearch']);
 
 Auth::routes();
 

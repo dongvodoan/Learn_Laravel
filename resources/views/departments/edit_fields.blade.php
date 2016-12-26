@@ -37,5 +37,5 @@
 </div>
 <!-- Submit Field -->
 <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
-    {!! Form::submit('Edit', ['class' => 'btn btn-success']) !!}
+    {!! Form::submit('Update', ['class' => 'btn btn-success']) !!}
 </div>

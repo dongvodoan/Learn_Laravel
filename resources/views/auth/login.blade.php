@@ -1,4 +1,26 @@
-<!DOCTYPE html>
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row">
+
+        <div id="container" class="container signin">
+            <form action="/ed/users/login" class="form-signin" id="UserLoginForm" method="post" accept-charset="utf-8">
+                <div style="display:none;">
+                    <input type="hidden" name="_method" value="POST"/>
+                </div>
+                    <h2 class="form-signin-heading">Please log in</h2><input name="data[User][username]" class="form-control username" placeholder="Username" autofocus="autofocus" maxlength="30" type="text" id="UserUsername"/>
+                <input name="data[User][password]" class="form-control password" placeholder="Password" type="password" id="UserPassword"/>
+                <div class="submit">
+                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Log in"/>
+                </div>
+            </form>       
+        </div>
+    </div>
+</div>
+@endsection
+
+{{-- <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -104,4 +126,4 @@
     });
 </script>
 </body>
-</html>
+</html> --}}

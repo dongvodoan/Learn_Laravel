@@ -1,4 +1,4 @@
-<table class="table table-responsive" id="employees-table">
+<table class="table table-responsive table-striped" id="employees-table">
     <tbody>
     <?php $index=1; ?>
     <tr>
@@ -13,7 +13,7 @@
         <tr>
             <td>{!! $index++; !!}</td>
             <td><a href="{!! route('employees.show', [$employee->id]) !!}">{!! $employee->name !!}</a></td>
-            <td>{!! $employee->department_id !!}</td>           
+            <td>{!! $employee->department->name !!}</td>           
             <td>{!! $employee->job_title !!}</td>
             <td>{!! $employee->email !!}</td>
             <td>
