@@ -39,22 +39,28 @@ class SearchController extends AppBaseController
         $department_id = $input['department_id'];
 
         // dd($department_id);
-        if(($name_employee==null) && ($department_id!=null)) {
+        if($name_employee==null) {
         	$this->employeeRepository->pushCriteria(new RequestCriteria($request));
         	$employees = $this->employeeRepository->findWhere([
     			//Default Condition =
     			'department_id'=>$department_id,
 			]); 
-        } else if(($name_employee!=null) && ($department_id!=null)) {
+        } 
+
+        if($department_id==null) {
         	$this->employeeRepository->pushCriteria(new RequestCriteria($request));
         	$employees = $this->employeeRepository->findWhere([
     			//Default Condition =
     			'name'=>$name_employee,
 			]);
-        } else if(($name_employee==null) && ($department_id==null)) {
+        }
+
+        if(($name_employee==null) && ($department_id==null)) {
         	$this->employeeRepository->pushCriteria(new RequestCriteria($request));
         	$employees = $this->employeeRepository->all();
-        } else {
+        }
+
+        if(($name_employee==!null) && ($department_id==!null)) {
         	$this->employeeRepository->pushCriteria(new RequestCriteria($request));
         	$employees = $this->employeeRepository->findWhere([
     			//Default Condition =

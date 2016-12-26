@@ -5,14 +5,30 @@
     <div class="row">
 
         <div id="container" class="container signin">
-            <form action="/ed/users/login" class="form-signin" id="UserLoginForm" method="post" accept-charset="utf-8">
+        <form method="post" action="{{ url('/check') }}" class="form-signin" id="UserLoginForm" method="post" accept-charset="utf-8">
+            {!! csrf_field() !!}
                 <div style="display:none;">
                     <input type="hidden" name="_method" value="POST"/>
                 </div>
-                    <h2 class="form-signin-heading">Please log in</h2><input name="data[User][username]" class="form-control username" placeholder="Username" autofocus="autofocus" maxlength="30" type="text" id="UserUsername"/>
-                <input name="data[User][password]" class="form-control password" placeholder="Password" type="password" id="UserPassword"/>
+                    <h2 class="form-signin-heading">Please log in</h2><div class="form-group has-feedback {{ $errors->has('name') ? ' has-error' : '' }}">
+                <input type="text" class="form-control" name="name"  placeholder="Username">
+                @if ($errors->has('name'))
+                    <span class="help-block">
+                    <strong>{{ $errors->first('name') }}</strong>
+                </span>
+                @endif
+            </div>
+                <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
+                <input type="password" class="form-control" placeholder="Password" name="password">
+                @if ($errors->has('password'))
+                    <span class="help-block">
+                    <strong>{{ $errors->first('password') }}</strong>
+                </span>
+                @endif
+
+            </div>
                 <div class="submit">
-                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Log in"/>
+                    <input class="btn btn-primary btn-block btn-flat" type="submit" value="Log in"/>
                 </div>
             </form>       
         </div>

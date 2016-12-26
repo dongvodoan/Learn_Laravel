@@ -18,8 +18,13 @@ Route::get('/', function () {
 // Route::get('employees/search', 'SearchController@filter');
 Route::get('/search', ['as' => 'search','uses' => 'SearchController@getsearch']);
 
-Auth::routes();
+// Auth::routes();
 
+Route::get('/login', 'AuthController@login');
+
+Route::post('/check', 'AuthController@check');
+
+Route::get('/logout', 'AuthController@logout');
 // Route::get('/home', 'HomeController@index');
 
 Route::resource('departments', 'DepartmentController');

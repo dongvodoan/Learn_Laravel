@@ -7,7 +7,11 @@
         <td>{!! Form::label('department', 'Department') !!}</td>
         <td>{!! Form::label('job_title', 'Job title') !!}</td>
         <td>{!! Form::label('email', 'Email') !!}</td>
+        <?php 
+            if(isset($_SESSION["username"])){
+        ?>
         <td>{!! Form::label('action', 'Action') !!}</td>
+        <?php } ?>
     </tr>
     @foreach($employees as $employee)
         <tr>
@@ -16,12 +20,16 @@
             <td>{!! $employee->department->name !!}</td>           
             <td>{!! $employee->job_title !!}</td>
             <td>{!! $employee->email !!}</td>
+            <?php 
+                if(isset($_SESSION["username"])){
+            ?>
             <td>
                 {!! Form::open(['route' => ['employees.destroy', $employee->id], 'method' => 'delete']) !!}
                     <a href="{!! route('employees.edit', [$employee->id]) !!}" class='btn btn-success action'>Edit</a>
                     {!! Form::button('Delete', ['type' => 'submit', 'class' => 'btn btn-danger action', 'onclick' => "return confirm('Are you sure?')"]) !!}
                 {!! Form::close() !!}
             </td>
+            <?php } ?>
         </tr>
     @endforeach
     </tbody>
