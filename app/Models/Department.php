@@ -44,7 +44,7 @@ class Department extends Model
      */
     public static $rules = [
         'name' => 'required|min:3|max:256',
-        'office_number' => 'required|regex:/^[0-9\+\-]*$/i|max: 15|min:9',
+        'office_number' => 'required|regex:/^[0-9\+\-\()\ ]*$/i|max: 15|min:9',
         'manager' => 'required'
     ];
 

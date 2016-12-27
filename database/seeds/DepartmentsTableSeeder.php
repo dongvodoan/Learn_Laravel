@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Fake\Factory;
 
 class DepartmentsTableSeeder extends Seeder
 {
@@ -11,7 +12,7 @@ class DepartmentsTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
+        $faker = Factory::create();
 
         for($i = 0; $i < 10; $i++){
         	DB::table('departments')->insert([

@@ -5,7 +5,7 @@
         <td>{!! Form::label('No.', '#') !!}</td>
         <td>{!! Form::label('name', 'Name') !!}</td>
         <td>{!! Form::label('department', 'Department') !!}</td>
-        <td>{!! Form::label('job_title', 'Job title') !!}</td>
+        <td>{!! Form::label('job_title', 'Job Title') !!}</td>
         <td>{!! Form::label('email', 'Email') !!}</td>
         <?php 
             if(isset($_SESSION["username"])){

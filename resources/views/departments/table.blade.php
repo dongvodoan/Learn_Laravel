@@ -21,7 +21,7 @@
             <?php 
                 if(isset($_SESSION["username"])){
             ?>
-            <td>
+            <td style="width: 280px;">
                 <div style="position: relative; float: left;">
                     {!! Form::open(['class' => 'form-inline', 'role' => 'search', 'route' => 'search', 'method' => 'GET', 'id' => 'indexForm', 'accept-charset' => 'utf-8']) !!}
                                     <input class="sr-only" name="name" class="form-control" placeholder="Employee Name" type="text" id="name"/>
