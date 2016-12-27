@@ -1,16 +1,13 @@
 <div class="col-lg-5">
-	<div class="form-group">
-                 
-            <div class="form-group">
-            	<img style="border:none; width: 500px; height: 280px;" src="{{ url(config('path.upload_img').$employee->image) }}" class = "setpicture img-thumbnail img_upload" id ="image_no"></img><br>
-                {{ Form::file('image',['class' => 'control','id' => 'image']) }}<br>
-            </div>
-                    @if ($errors->has('image'))
-                    <span class="errors">
-                        <strong>{{ $errors->first('image') }}</strong>
-                    </span>
-                    @endif
-                </div>
+    <div class="form-group">
+    	<img style="border:none; width: 500px; height: 280px;" src="{{ url(config('path.upload_img').$employee->image) }}" class = "setpicture img-thumbnail img_upload" id ="image_no"></img><br>
+        {{ Form::file('image',['class' => 'control','id' => 'image']) }}<br>
+    	@if ($errors->has('image'))
+            <span class="help-block">
+                <strong>{{ $errors->first('image') }}</strong>
+            </span>
+        @endif
+    </div>                  
 </div>
 <div class="col-lg-7">
 	<div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">

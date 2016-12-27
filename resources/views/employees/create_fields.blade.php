@@ -1,16 +1,13 @@
 <div class="col-lg-5">
-	<div class="form-group">
-                 
-            <div class="form-group">
+            <div class="form-group {{ $errors->has('image') ? ' has-error' : '' }}">
             	<img style="border:none; width: 500px; height: 280px;" src="{{ url('images/upload/icon-profile.png') }}" class = "setpicture img-thumbnail img_upload" id ="image_no"></img><br>
                 {{ Form::file('image',['class' => 'control','id' => 'image']) }}<br>
-            </div>
-                    @if ($errors->has('image'))
-                    <span class="errors">
-                        <strong>{{ $errors->first('image') }}</strong>
+            	@if ($errors->has('image'))
+                    <span class="help-block">
+                        {{ $errors->first('image') }}
                     </span>
-                    @endif
-                </div>
+                @endif
+            </div>               
 </div>
 <div class="col-lg-7">
 	<div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">

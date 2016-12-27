@@ -51,9 +51,10 @@ class Employee extends Model
     public static $rules = [
         'name' => 'required|regex:/^[A-Za-z \t]*\p{L}+/i|min:3|max:100',
         'job_title' => 'required|min:3|max:100',
-        'phone' => 'required|regex:/^[0-9\+\-]*$/i|max: 15|min:9',
+        'phone' => 'required|regex:/^[0-9\+\-\()\ ]*$/i|max: 15|min:9',
         'email' => 'required|email',
-        'image' => 'mimes:jpeg,jpg,png'
+        'image' => 'mimes:jpeg,jpg,png|max:2048',
+        'department' => 'required'
     ];
 
     /**
